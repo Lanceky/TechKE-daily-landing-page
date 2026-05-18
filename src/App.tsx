@@ -12,21 +12,18 @@ const spotlightArticles = [
         publisher: 'Nairobi Tech Review',
         author: 'Achieng O.',
         date: 'May 18, 2026',
-        sourceUrl: 'https://example.com',
     },
     {
         title: 'Mombasa climate startup scales solar cold-chain',
         publisher: 'East Africa Innovation',
         author: 'Kamau N.',
         date: 'May 16, 2026',
-        sourceUrl: 'https://example.com',
     },
     {
         title: 'Kisumu developers launch Swahili learning app',
         publisher: 'Silicon Savannah Brief',
         author: 'Editorial Desk',
         date: 'May 12, 2026',
-        sourceUrl: 'https://example.com',
     },
 ]
 
@@ -182,14 +179,6 @@ function App() {
                                     <span>Author: {article.author}</span>
                                     <span>{article.date}</span>
                                 </div>
-                                <a
-                                    className="text-link"
-                                    href={article.sourceUrl}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    Original source
-                                </a>
                             </article>
                         ))}
                     </div>

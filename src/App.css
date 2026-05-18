@@ -53,6 +53,7 @@
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 1.6px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -362,6 +363,150 @@
   margin: 0;
   font-family: var(--heading);
   font-size: 22px;
+}
+
+.spotlight {
+  background: var(--surface);
+  border-radius: 32px;
+  border: 1px solid var(--border);
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.spotlight-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  background: #fff;
+  display: grid;
+  gap: 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.spotlight-card h3 {
+  margin: 0;
+  font-family: var(--heading);
+  font-size: 20px;
+}
+
+.article-meta {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.text-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-2);
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--accent);
+}
+
+.editorial {
+  background: var(--surface);
+  border-radius: 32px;
+  border: 1px solid var(--border);
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.editorial-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  background: #fff;
+  display: grid;
+  gap: 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.guidelines-list,
+.editor-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.guidelines-list li {
+  font-size: 14px;
+}
+
+.editor-role {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.editor-name {
+  color: var(--muted);
+}
+
+.disclosure {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(198, 75, 43, 0.08);
+  font-size: 13px;
+}
+
+.contact {
+  border-top: 1px solid var(--border);
+}
+
+.contact-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  background: #fff;
+  display: grid;
+  gap: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.contact-item {
+  display: grid;
+  gap: 4px;
+}
+
+.contact-item dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.contact-item dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .highlights {
@@ -741,11 +886,13 @@
 
   .highlights,
   .feature-grid,
+  .spotlight-grid,
   .feed-grid,
   .testimonials-grid,
   .split-grid,
   .cta-band,
   .featured-grid,
+  .editorial-grid,
   .footer {
     grid-template-columns: 1fr;
   }

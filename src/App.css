@@ -8,10 +8,10 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 10% 10%,
-      rgba(198, 75, 43, 0.12),
+      var(--accent-tint),
       transparent 45%),
     radial-gradient(circle at 90% 20%,
-      rgba(29, 124, 77, 0.12),
+      var(--green-tint),
       transparent 40%);
   pointer-events: none;
   z-index: 0;
@@ -31,7 +31,7 @@
   position: sticky;
   top: 0;
   backdrop-filter: blur(12px);
-  background: rgba(248, 241, 230, 0.8);
+  background: color-mix(in srgb, var(--color-paper) 82%, transparent);
   border-bottom: 1px solid var(--border);
   z-index: 10;
 }
@@ -101,7 +101,7 @@
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--color-on-accent);
   box-shadow: var(--shadow);
 }
 
@@ -198,7 +198,7 @@
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--color-card);
 }
 
 .hero-visual {
@@ -215,7 +215,7 @@
   height: 320px;
   border-radius: 50%;
   background: radial-gradient(circle,
-      rgba(198, 75, 43, 0.25),
+      var(--accent-tint-strong),
       transparent 65%);
   filter: blur(10px);
 }
@@ -239,7 +239,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: #fff;
+  background: var(--color-card);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -268,8 +268,8 @@
 
 .phone-card.primary {
   background: linear-gradient(135deg,
-      rgba(198, 75, 43, 0.2),
-      rgba(198, 75, 43, 0.05));
+      var(--accent-tint-strong),
+      var(--accent-tint-soft));
 }
 
 .phone-card h3 {
@@ -287,13 +287,13 @@
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background: rgba(198, 75, 43, 0.12);
+  background: var(--accent-tint);
   color: var(--accent);
   width: fit-content;
 }
 
 .tag.alt {
-  background: rgba(29, 124, 77, 0.12);
+  background: var(--green-tint);
   color: var(--accent-2);
 }
 
@@ -353,7 +353,7 @@
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 24px;
-  background: #fff;
+  background: var(--color-card);
   display: grid;
   gap: 12px;
   box-shadow: var(--shadow-soft);
@@ -381,7 +381,7 @@
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 24px;
-  background: #fff;
+  background: var(--color-card);
   display: grid;
   gap: 12px;
   box-shadow: var(--shadow-soft);
@@ -429,7 +429,7 @@
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 24px;
-  background: #fff;
+  background: var(--color-card);
   display: grid;
   gap: 12px;
   box-shadow: var(--shadow-soft);
@@ -462,7 +462,7 @@
   margin-top: 12px;
   padding: 12px 14px;
   border-radius: 14px;
-  background: rgba(198, 75, 43, 0.08);
+  background: var(--accent-tint-soft);
   font-size: 13px;
 }
 
@@ -474,7 +474,7 @@
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 24px;
-  background: #fff;
+  background: var(--color-card);
   display: grid;
   gap: 16px;
   box-shadow: var(--shadow-soft);
@@ -559,7 +559,7 @@
 .feature-card {
   border-radius: 26px;
   overflow: hidden;
-  background: #fff;
+  background: var(--color-card);
   border: 1px solid var(--border);
   display: grid;
 }
@@ -567,7 +567,7 @@
 .feature-media {
   height: 220px;
   background: linear-gradient(120deg,
-      rgba(29, 124, 77, 0.2),
+      var(--green-tint),
       transparent 60%),
     url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80') center/cover;
 }
@@ -586,7 +586,7 @@
 .headline-row {
   padding: 16px;
   border-radius: 16px;
-  background: #fff;
+  background: var(--color-card);
   border: 1px solid var(--border);
   display: grid;
   gap: 8px;
@@ -665,7 +665,7 @@
   justify-self: start;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(35, 32, 28, 0.08);
+  background: var(--color-chip);
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -697,7 +697,7 @@
 
 .pill.active {
   background: var(--accent);
-  color: #fff;
+  color: var(--color-on-accent);
   border-color: transparent;
 }
 
@@ -711,7 +711,7 @@
   border-radius: 18px;
   padding: 18px;
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--color-card);
   display: grid;
   gap: 10px;
   animation: fadeUp 0.8s ease both;
@@ -765,8 +765,8 @@
 
 .cta-band {
   background: linear-gradient(120deg,
-      rgba(198, 75, 43, 0.2),
-      rgba(29, 124, 77, 0.15));
+      var(--accent-tint-strong),
+      var(--green-tint));
   border-radius: 32px;
   border: 1px solid var(--border);
   display: grid;
@@ -786,7 +786,7 @@
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 32px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--color-card);
 }
 
 .footer p {
@@ -833,7 +833,7 @@
   gap: 8px;
   padding: 10px;
   border-radius: 999px;
-  background: rgba(248, 241, 230, 0.9);
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   z-index: 20;

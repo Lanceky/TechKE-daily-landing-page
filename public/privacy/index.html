@@ -1,428 +1,456 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
     <title>Privacy Policy — TechKE Daily</title>
-    <meta
-      name="description"
-      content="Privacy Policy for TechKE Daily, the technology news app for Kenya and the wider region."
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="description"
+        content="Privacy Policy for TechKE Daily, the technology news app for Kenya and the wider region." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
-      :root {
-        --bg: #f8f1e6;
-        --surface: #fdf9f2;
-        --text: #23201c;
-        --muted: #5f574e;
-        --accent: #c64b2b;
-        --accent-2: #1d7c4d;
-        --border: rgba(35, 32, 28, 0.12);
-        --shadow: 0 20px 50px -40px rgba(19, 14, 10, 0.7);
-        --sans: 'Space Grotesk', system-ui, sans-serif;
-        --heading: 'Fraunces', 'Times New Roman', serif;
-      }
+        :root {
+            --color-paper: #F5F7FB;
+            --color-card: #FFFFFF;
+            --color-ink: #0F172A;
+            --color-muted: #64748B;
+            --color-accent: #2563EB;
+            --color-green: #15803D;
+            --color-border: #E3E8F0;
+            --color-blob-1: #DCE6FF;
+            --color-blob-2: #D8EBE0;
+            --shadow: 0 20px 50px -40px rgba(15, 23, 42, 0.45);
+            --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-      * {
-        box-sizing: border-box;
-      }
+            --bg: var(--color-paper);
+            --surface: var(--color-card);
+            --text: var(--color-ink);
+            --muted: var(--color-muted);
+            --accent: var(--color-accent);
+            --accent-2: var(--color-green);
+            --border: var(--color-border);
+            --sans: var(--font-sans);
+            --heading: var(--font-sans);
+        }
 
-      body {
-        margin: 0;
-        font: 16px/1.7 var(--sans);
-        color: var(--text);
-        background: var(--bg);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
+        :root[data-theme="dark"] {
+            --color-paper: #08090C;
+            --color-card: #101218;
+            --color-ink: #EDEEF0;
+            --color-muted: #8A8F98;
+            --color-accent: #C9AA7E;
+            --color-green: #3FB950;
+            --color-border: #23262E;
+            --color-blob-1: #0E1626;
+            --color-blob-2: #0E1B19;
+        }
 
-      body::before {
-        content: '';
-        position: fixed;
-        inset: -20% -20% auto -20%;
-        height: 60vh;
-        background: linear-gradient(
-          120deg,
-          rgba(198, 75, 43, 0.08),
-          rgba(29, 124, 77, 0.08)
-        );
-        z-index: -1;
-      }
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --color-paper: #08090C;
+                --color-card: #101218;
+                --color-ink: #EDEEF0;
+                --color-muted: #8A8F98;
+                --color-accent: #C9AA7E;
+                --color-green: #3FB950;
+                --color-border: #23262E;
+                --color-blob-1: #0E1626;
+                --color-blob-2: #0E1B19;
+            }
+        }
 
-      .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 24px 32px;
-        gap: 16px;
-        max-width: 880px;
-        margin: 0 auto;
-      }
+        * {
+            box-sizing: border-box;
+        }
 
-      .brand {
-        font-family: var(--heading);
-        font-size: 24px;
-        font-weight: 700;
-        letter-spacing: -0.8px;
-        text-decoration: none;
-        color: var(--text);
-      }
+        body {
+            margin: 0;
+            font: 16px/1.7 var(--font-sans);
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-      .brand span {
-        color: var(--accent);
-      }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: -20% -20% auto -20%;
+            height: 60vh;
+            background: linear-gradient(120deg,
+                    var(--color-blob-1),
+                    var(--color-blob-2));
+            opacity: 0.5;
+            z-index: -1;
+        }
 
-      .back-link {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1.4px;
-        color: var(--accent-2);
-        text-decoration: none;
-        font-weight: 500;
-      }
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 32px;
+            gap: 16px;
+            max-width: 880px;
+            margin: 0 auto;
+        }
 
-      .back-link:hover {
-        text-decoration: underline;
-      }
+        .brand {
+            font-family: var(--heading);
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            text-decoration: none;
+            color: var(--text);
+        }
 
-      main {
-        max-width: 880px;
-        margin: 0 auto 80px;
-        padding: 0 32px;
-      }
+        .brand span {
+            color: var(--accent);
+        }
 
-      .doc {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        box-shadow: var(--shadow);
-        padding: 48px clamp(24px, 5vw, 56px);
-      }
+        .back-link {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-      h1 {
-        font-family: var(--heading);
-        font-size: clamp(32px, 6vw, 46px);
-        line-height: 1.1;
-        margin: 0 0 12px;
-        letter-spacing: -1px;
-      }
+        .back-link:hover {
+            text-decoration: underline;
+        }
 
-      .updated {
-        color: var(--muted);
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1.4px;
-        margin: 0 0 32px;
-      }
+        main {
+            max-width: 880px;
+            margin: 0 auto 80px;
+            padding: 0 32px;
+        }
 
-      .intro {
-        font-size: 17px;
-        color: var(--muted);
-        margin: 0 0 32px;
-      }
+        .doc {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 48px clamp(24px, 5vw, 56px);
+        }
 
-      h2 {
-        font-family: var(--heading);
-        font-size: 22px;
-        margin: 40px 0 12px;
-        letter-spacing: -0.4px;
-      }
+        h1 {
+            font-family: var(--heading);
+            font-size: clamp(32px, 6vw, 46px);
+            line-height: 1.1;
+            margin: 0 0 12px;
+            letter-spacing: -1px;
+        }
 
-      h2 .num {
-        color: var(--accent);
-        margin-right: 8px;
-      }
+        .updated {
+            color: var(--muted);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            margin: 0 0 32px;
+        }
 
-      h3 {
-        font-family: var(--heading);
-        font-size: 18px;
-        margin: 24px 0 8px;
-        letter-spacing: -0.2px;
-      }
+        .intro {
+            font-size: 17px;
+            color: var(--muted);
+            margin: 0 0 32px;
+        }
 
-      p {
-        margin: 0 0 16px;
-        color: var(--text);
-      }
+        h2 {
+            font-family: var(--heading);
+            font-size: 22px;
+            margin: 40px 0 12px;
+            letter-spacing: -0.4px;
+        }
 
-      ul {
-        margin: 0 0 16px;
-        padding-left: 22px;
-      }
+        h2 .num {
+            color: var(--accent);
+            margin-right: 8px;
+        }
 
-      li {
-        margin-bottom: 8px;
-        color: var(--text);
-      }
+        h3 {
+            font-family: var(--heading);
+            font-size: 18px;
+            margin: 24px 0 8px;
+            letter-spacing: -0.2px;
+        }
 
-      a {
-        color: var(--accent-2);
-        word-break: break-word;
-      }
+        p {
+            margin: 0 0 16px;
+            color: var(--text);
+        }
 
-      .contact-block {
-        margin-top: 8px;
-        line-height: 1.9;
-      }
+        ul {
+            margin: 0 0 16px;
+            padding-left: 22px;
+        }
 
-      footer {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 24px 32px 48px;
-        color: var(--muted);
-        font-size: 14px;
-        text-align: center;
-      }
+        li {
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--accent-2);
+            word-break: break-word;
+        }
+
+        .contact-block {
+            margin-top: 8px;
+            line-height: 1.9;
+        }
+
+        footer {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 24px 32px 48px;
+            color: var(--muted);
+            font-size: 14px;
+            text-align: center;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <header class="topbar">
-      <a class="brand" href="/">TechKE<span>.</span>Daily</a>
-      <a class="back-link" href="/">&larr; Back to home</a>
+        <a class="brand" href="/">TechKE<span>.</span>Daily</a>
+        <a class="back-link" href="/">&larr; Back to home</a>
     </header>
 
     <main>
-      <article class="doc">
-        <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: June 8, 2026</p>
+        <article class="doc">
+            <h1>Privacy Policy</h1>
+            <p class="updated">Last updated: June 8, 2026</p>
 
-        <p class="intro">
-          This Privacy Policy explains how TechKE Daily ("TechKE Daily", the
-          "App", "we", "us", or "our") collects, uses, and shares information
-          when you use the TechKE Daily mobile application and related services
-          (the "Service"). By using the Service, you agree to the practices
-          described in this policy.
-        </p>
+            <p class="intro">
+                This Privacy Policy explains how TechKE Daily ("TechKE Daily", the
+                "App", "we", "us", or "our") collects, uses, and shares information
+                when you use the TechKE Daily mobile application and related services
+                (the "Service"). By using the Service, you agree to the practices
+                described in this policy.
+            </p>
 
-        <h2><span class="num">1.</span>Information We Collect</h2>
+            <h2><span class="num">1.</span>Information We Collect</h2>
 
-        <h3>a) Information you provide when you sign in.</h3>
-        <p>
-          The App lets you browse without an account. If you choose to sign in,
-          you may authenticate using a third-party provider such as Google or
-          GitHub. Through that provider we receive basic profile information,
-          which may include your name, email address, and profile picture. We do
-          not receive or store your social account password.
-        </p>
+            <h3>a) Information you provide when you sign in.</h3>
+            <p>
+                The App lets you browse without an account. If you choose to sign in,
+                you may authenticate using a third-party provider such as Google or
+                GitHub. Through that provider we receive basic profile information,
+                which may include your name, email address, and profile picture. We do
+                not receive or store your social account password.
+            </p>
 
-        <h3>b) Content and activity data.</h3>
-        <p>
-          To personalize your experience, we store information such as the
-          channels you follow, articles you bookmark, and your in-app preferences
-          (for example, theme and notification settings). Some of this data may
-          be associated with your account or with an anonymous device identifier
-          if you are not signed in.
-        </p>
+            <h3>b) Content and activity data.</h3>
+            <p>
+                To personalize your experience, we store information such as the
+                channels you follow, articles you bookmark, and your in-app preferences
+                (for example, theme and notification settings). Some of this data may
+                be associated with your account or with an anonymous device identifier
+                if you are not signed in.
+            </p>
 
-        <h3>c) Push notification tokens.</h3>
-        <p>
-          If you enable notifications, we collect and store a push notification
-          token so we can deliver notifications (such as the daily top stories)
-          to your device. You can disable notifications at any time.
-        </p>
+            <h3>c) Push notification tokens.</h3>
+            <p>
+                If you enable notifications, we collect and store a push notification
+                token so we can deliver notifications (such as the daily top stories)
+                to your device. You can disable notifications at any time.
+            </p>
 
-        <h3>d) Device and usage information.</h3>
-        <p>
-          We may automatically collect limited technical information such as
-          device type, operating system version, app version, general app
-          interaction events, and a non-permanent device identifier. This helps
-          us operate, secure, and improve the Service.
-        </p>
+            <h3>d) Device and usage information.</h3>
+            <p>
+                We may automatically collect limited technical information such as
+                device type, operating system version, app version, general app
+                interaction events, and a non-permanent device identifier. This helps
+                us operate, secure, and improve the Service.
+            </p>
 
-        <h3>e) Advertising data.</h3>
-        <p>
-          In the ad-supported (free) version, our advertising partners may
-          collect information such as advertising identifiers, device
-          information, and ad interaction data to serve and measure
-          advertisements.
-        </p>
+            <h3>e) Advertising data.</h3>
+            <p>
+                In the ad-supported (free) version, our advertising partners may
+                collect information such as advertising identifiers, device
+                information, and ad interaction data to serve and measure
+                advertisements.
+            </p>
 
-        <h3>f) Purchase information.</h3>
-        <p>
-          If you buy the "Remove Ads" product, the purchase is processed by
-          Google Play. We receive confirmation that the purchase was made so we
-          can unlock the ad-free experience, but we do not collect or store your
-          payment card or billing details.
-        </p>
+            <h3>f) Purchase information.</h3>
+            <p>
+                If you buy the "Remove Ads" product, the purchase is processed by
+                Google Play. We receive confirmation that the purchase was made so we
+                can unlock the ad-free experience, but we do not collect or store your
+                payment card or billing details.
+            </p>
 
-        <h2><span class="num">2.</span>How We Use Information</h2>
-        <p>We use the information we collect to:</p>
-        <ul>
-          <li>Provide, maintain, and personalize the Service and your feed.</li>
-          <li>Authenticate you and manage your account.</li>
-          <li>Deliver push notifications you have opted into.</li>
-          <li>
-            Display and measure advertisements (free version) and process the
-            "Remove Ads" purchase.
-          </li>
-          <li>Operate, secure, debug, and improve the Service.</li>
-          <li>
-            Comply with legal obligations and enforce our Terms of Service.
-          </li>
-        </ul>
+            <h2><span class="num">2.</span>How We Use Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide, maintain, and personalize the Service and your feed.</li>
+                <li>Authenticate you and manage your account.</li>
+                <li>Deliver push notifications you have opted into.</li>
+                <li>
+                    Display and measure advertisements (free version) and process the
+                    "Remove Ads" purchase.
+                </li>
+                <li>Operate, secure, debug, and improve the Service.</li>
+                <li>
+                    Comply with legal obligations and enforce our Terms of Service.
+                </li>
+            </ul>
 
-        <h2><span class="num">3.</span>How We Share Information</h2>
-        <p>
-          We do not sell your personal information. We share information only as
-          follows:
-        </p>
-        <ul>
-          <li>
-            <strong>Service providers and infrastructure.</strong> We use
-            Supabase for authentication, database, and backend services, and Expo
-            / platform push services to deliver notifications.
-          </li>
-          <li>
-            <strong>Identity providers.</strong> Google and GitHub process your
-            sign-in when you choose to authenticate with them.
-          </li>
-          <li>
-            <strong>Advertising partners.</strong> Appodeal and its mediated ad
-            networks may process data to serve and measure ads in the free
-            version.
-          </li>
-          <li><strong>App stores.</strong> Google Play processes purchases.</li>
-          <li>
-            <strong>Legal reasons.</strong> We may disclose information if
-            required by law or to protect the rights, safety, and security of our
-            users or the Service.
-          </li>
-        </ul>
+            <h2><span class="num">3.</span>How We Share Information</h2>
+            <p>
+                We do not sell your personal information. We share information only as
+                follows:
+            </p>
+            <ul>
+                <li>
+                    <strong>Service providers and infrastructure.</strong> We use
+                    Supabase for authentication, database, and backend services, and Expo
+                    / platform push services to deliver notifications.
+                </li>
+                <li>
+                    <strong>Identity providers.</strong> Google and GitHub process your
+                    sign-in when you choose to authenticate with them.
+                </li>
+                <li>
+                    <strong>Advertising partners.</strong> Appodeal and its mediated ad
+                    networks may process data to serve and measure ads in the free
+                    version.
+                </li>
+                <li><strong>App stores.</strong> Google Play processes purchases.</li>
+                <li>
+                    <strong>Legal reasons.</strong> We may disclose information if
+                    required by law or to protect the rights, safety, and security of our
+                    users or the Service.
+                </li>
+            </ul>
 
-        <h2><span class="num">4.</span>Third-Party Services and Links</h2>
-        <p>
-          The Service links to articles and content hosted on third-party
-          websites. When you open an external article, the third party's own
-          privacy policy applies. We encourage you to review the privacy policies
-          of any third-party services and websites you interact with. Relevant
-          third-party policies include:
-        </p>
-        <ul>
-          <li>
-            Google:
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer"
-              >https://policies.google.com/privacy</a
-            >
-          </li>
-          <li>
-            GitHub:
-            <a href="https://docs.github.com/site-policy" target="_blank" rel="noreferrer"
-              >https://docs.github.com/site-policy</a
-            >
-          </li>
-          <li>
-            Supabase:
-            <a href="https://supabase.com/privacy" target="_blank" rel="noreferrer"
-              >https://supabase.com/privacy</a
-            >
-          </li>
-          <li>
-            Appodeal:
-            <a href="https://www.appodeal.com/privacy-policy/" target="_blank" rel="noreferrer"
-              >https://www.appodeal.com/privacy-policy/</a
-            >
-          </li>
-          <li>
-            Expo:
-            <a href="https://expo.dev/privacy" target="_blank" rel="noreferrer"
-              >https://expo.dev/privacy</a
-            >
-          </li>
-        </ul>
+            <h2><span class="num">4.</span>Third-Party Services and Links</h2>
+            <p>
+                The Service links to articles and content hosted on third-party
+                websites. When you open an external article, the third party's own
+                privacy policy applies. We encourage you to review the privacy policies
+                of any third-party services and websites you interact with. Relevant
+                third-party policies include:
+            </p>
+            <ul>
+                <li>
+                    Google:
+                    <a href="https://policies.google.com/privacy" target="_blank"
+                        rel="noreferrer">https://policies.google.com/privacy</a>
+                </li>
+                <li>
+                    GitHub:
+                    <a href="https://docs.github.com/site-policy" target="_blank"
+                        rel="noreferrer">https://docs.github.com/site-policy</a>
+                </li>
+                <li>
+                    Supabase:
+                    <a href="https://supabase.com/privacy" target="_blank"
+                        rel="noreferrer">https://supabase.com/privacy</a>
+                </li>
+                <li>
+                    Appodeal:
+                    <a href="https://www.appodeal.com/privacy-policy/" target="_blank"
+                        rel="noreferrer">https://www.appodeal.com/privacy-policy/</a>
+                </li>
+                <li>
+                    Expo:
+                    <a href="https://expo.dev/privacy" target="_blank" rel="noreferrer">https://expo.dev/privacy</a>
+                </li>
+            </ul>
 
-        <h2><span class="num">5.</span>Data Retention</h2>
-        <p>
-          We retain account-related information for as long as your account is
-          active or as needed to provide the Service. Bookmarks, follows, and
-          preferences are retained until you remove them or delete your account.
-          Push tokens are retained while notifications are enabled and are
-          removed or refreshed when you disable notifications or uninstall the
-          App.
-        </p>
+            <h2><span class="num">5.</span>Data Retention</h2>
+            <p>
+                We retain account-related information for as long as your account is
+                active or as needed to provide the Service. Bookmarks, follows, and
+                preferences are retained until you remove them or delete your account.
+                Push tokens are retained while notifications are enabled and are
+                removed or refreshed when you disable notifications or uninstall the
+                App.
+            </p>
 
-        <h2><span class="num">6.</span>Your Choices and Rights</h2>
-        <ul>
-          <li>
-            <strong>Notifications.</strong> You can enable or disable push
-            notifications from the App's settings or your device settings at any
-            time.
-          </li>
-          <li>
-            <strong>Account data.</strong> You can remove bookmarks and unfollow
-            channels within the App.
-          </li>
-          <li>
-            <strong>Account deletion.</strong> You may request deletion of your
-            account and associated personal data by contacting us at the email
-            below. We will process such requests in accordance with applicable
-            law.
-          </li>
-          <li>
-            <strong>Advertising.</strong> You can limit ad tracking through your
-            device settings, or remove ads entirely by purchasing the "Remove
-            Ads" product.
-          </li>
-        </ul>
-        <p>
-          Depending on your location, you may have additional rights such as
-          access, correction, or deletion of your personal data. Contact us to
-          exercise these rights.
-        </p>
+            <h2><span class="num">6.</span>Your Choices and Rights</h2>
+            <ul>
+                <li>
+                    <strong>Notifications.</strong> You can enable or disable push
+                    notifications from the App's settings or your device settings at any
+                    time.
+                </li>
+                <li>
+                    <strong>Account data.</strong> You can remove bookmarks and unfollow
+                    channels within the App.
+                </li>
+                <li>
+                    <strong>Account deletion.</strong> You may request deletion of your
+                    account and associated personal data by contacting us at the email
+                    below. We will process such requests in accordance with applicable
+                    law.
+                </li>
+                <li>
+                    <strong>Advertising.</strong> You can limit ad tracking through your
+                    device settings, or remove ads entirely by purchasing the "Remove
+                    Ads" product.
+                </li>
+            </ul>
+            <p>
+                Depending on your location, you may have additional rights such as
+                access, correction, or deletion of your personal data. Contact us to
+                exercise these rights.
+            </p>
 
-        <h2><span class="num">7.</span>Children's Privacy</h2>
-        <p>
-          The Service is not directed to children under the age of 13 (or the
-          minimum age of digital consent in your country). We do not knowingly
-          collect personal information from children. If you believe a child has
-          provided us with personal information, please contact us and we will
-          take steps to delete it.
-        </p>
+            <h2><span class="num">7.</span>Children's Privacy</h2>
+            <p>
+                The Service is not directed to children under the age of 13 (or the
+                minimum age of digital consent in your country). We do not knowingly
+                collect personal information from children. If you believe a child has
+                provided us with personal information, please contact us and we will
+                take steps to delete it.
+            </p>
 
-        <h2><span class="num">8.</span>Data Security</h2>
-        <p>
-          We use reasonable technical and organizational measures to protect your
-          information, including encrypted connections and access controls through
-          our infrastructure providers. However, no method of transmission or
-          storage is completely secure, and we cannot guarantee absolute
-          security.
-        </p>
+            <h2><span class="num">8.</span>Data Security</h2>
+            <p>
+                We use reasonable technical and organizational measures to protect your
+                information, including encrypted connections and access controls through
+                our infrastructure providers. However, no method of transmission or
+                storage is completely secure, and we cannot guarantee absolute
+                security.
+            </p>
 
-        <h2><span class="num">9.</span>International Data Transfers</h2>
-        <p>
-          Your information may be processed and stored on servers located outside
-          your country of residence, including by our service providers. Where
-          required, we take steps to ensure your information receives an adequate
-          level of protection.
-        </p>
+            <h2><span class="num">9.</span>International Data Transfers</h2>
+            <p>
+                Your information may be processed and stored on servers located outside
+                your country of residence, including by our service providers. Where
+                required, we take steps to ensure your information receives an adequate
+                level of protection.
+            </p>
 
-        <h2><span class="num">10.</span>Changes to This Policy</h2>
-        <p>
-          We may update this Privacy Policy from time to time. When we make
-          material changes, we will update the "Last updated" date above and,
-          where appropriate, provide notice within the App. Your continued use of
-          the Service after changes take effect constitutes acceptance of the
-          updated policy.
-        </p>
+            <h2><span class="num">10.</span>Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time. When we make
+                material changes, we will update the "Last updated" date above and,
+                where appropriate, provide notice within the App. Your continued use of
+                the Service after changes take effect constitutes acceptance of the
+                updated policy.
+            </p>
 
-        <h2><span class="num">11.</span>Contact Us</h2>
-        <p>
-          If you have questions or requests regarding this Privacy Policy or your
-          data, contact us at:
-        </p>
-        <p class="contact-block">
-          Email: <a href="mailto:qlanlabs@gmail.com">qlanlabs@gmail.com</a><br />
-          Website: <a href="https://techkedaily.tech/">https://techkedaily.tech/</a>
-        </p>
-      </article>
+            <h2><span class="num">11.</span>Contact Us</h2>
+            <p>
+                If you have questions or requests regarding this Privacy Policy or your
+                data, contact us at:
+            </p>
+            <p class="contact-block">
+                Email: <a href="mailto:qlanlabs@gmail.com">qlanlabs@gmail.com</a><br />
+                Website: <a href="https://techkedaily.tech/">https://techkedaily.tech/</a>
+            </p>
+        </article>
     </main>
 
     <footer>
-      &copy; 2026 TechKE Daily. All rights reserved.
+        &copy; 2026 TechKE Daily. All rights reserved.
     </footer>
-  </body>
+</body>
+
 </html>

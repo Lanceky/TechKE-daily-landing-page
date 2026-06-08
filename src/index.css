@@ -1,29 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/*
+ * TechKE Daily — Brand & UI Theme Tokens
+ * Light mode is the default. Dark mode uses a warm-gold accent.
+ * Toggle dark mode with data-theme="dark" on <html>, or rely on the
+ * prefers-color-scheme block below.
+ */
 :root {
-  --bg: #f8f1e6;
-  --surface: #fdf9f2;
-  --surface-alt: #f6efe4;
-  --text: #23201c;
-  --muted: #5f574e;
-  --accent: #c64b2b;
-  --accent-2: #1d7c4d;
-  --border: rgba(35, 32, 28, 0.12);
-  --border-strong: rgba(35, 32, 28, 0.3);
-  --shadow: 0 20px 50px -40px rgba(19, 14, 10, 0.7);
-  --shadow-strong: 0 30px 60px -35px rgba(19, 14, 10, 0.7);
-  --shadow-soft: 0 14px 30px -26px rgba(19, 14, 10, 0.6);
+  /* ---- Color palette: LIGHT (default) ---- */
+  --color-paper: #F5F7FB;
+  --color-card: #FFFFFF;
+  --color-ink: #0F172A;
+  --color-muted: #64748B;
+  --color-accent: #2563EB;
+  --color-accent-soft: #DCE8FF;
+  --color-green: #15803D;
+  --color-border: #E3E8F0;
+  --color-chip: #ECF1F8;
+  --color-highlight: #F59E0B;
+  --color-overlay: rgba(15, 23, 42, 0.38);
+  --color-on-accent: #FFFFFF;
 
-  --sans: 'Space Grotesk', system-ui, sans-serif;
-  --heading: 'Fraunces', 'Times New Roman', serif;
+  --color-blob-1: #DCE6FF;
+  --color-blob-2: #D8EBE0;
+  --color-blob-3: #E7ECFB;
 
-  font: 16px/1.6 var(--sans);
-  color: var(--text);
-  background: var(--bg);
+  /* ---- Typography ---- */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ---- Radius (px) ---- */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  /* ---- Spacing scale (px) ---- */
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* ---- Backward-compatible aliases (resolve from tokens above) ---- */
+  --bg: var(--color-paper);
+  --surface: var(--color-card);
+  --surface-alt: var(--color-chip);
+  --text: var(--color-ink);
+  --muted: var(--color-muted);
+  --accent: var(--color-accent);
+  --accent-2: var(--color-green);
+  --border: var(--color-border);
+  --border-strong: color-mix(in srgb, var(--color-ink) 24%, transparent);
+  --shadow: 0 20px 50px -40px rgba(15, 23, 42, 0.45);
+  --shadow-strong: 0 30px 60px -35px rgba(15, 23, 42, 0.5);
+  --shadow-soft: 0 14px 30px -26px rgba(15, 23, 42, 0.3);
+  --sans: var(--font-sans);
+  --heading: var(--font-sans);
+
+  /* Accent tints derived from tokens (used for chips, badges, gradients) */
+  --accent-tint-strong: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  --accent-tint: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --accent-tint-soft: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  --green-tint: color-mix(in srgb, var(--color-green) 14%, transparent);
+
+  font: 16px/1.6 var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Color palette: DARK ---- */
+:root[data-theme="dark"] {
+  --color-paper: #08090C;
+  --color-card: #101218;
+  --color-ink: #EDEEF0;
+  --color-muted: #8A8F98;
+  --color-accent: #C9AA7E;
+  --color-accent-soft: #241F16;
+  --color-green: #3FB950;
+  --color-border: #23262E;
+  --color-chip: #0C0E13;
+  --color-highlight: #E3B341;
+  --color-overlay: rgba(0, 0, 0, 0.70);
+  --color-on-accent: #08090C;
+
+  --color-blob-1: #0E1626;
+  --color-blob-2: #0E1B19;
+  --color-blob-3: #12172A;
+}
+
+/* Automatic dark mode when the user hasn't explicitly chosen light */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-paper: #08090C;
+    --color-card: #101218;
+    --color-ink: #EDEEF0;
+    --color-muted: #8A8F98;
+    --color-accent: #C9AA7E;
+    --color-accent-soft: #241F16;
+    --color-green: #3FB950;
+    --color-border: #23262E;
+    --color-chip: #0C0E13;
+    --color-highlight: #E3B341;
+    --color-overlay: rgba(0, 0, 0, 0.70);
+    --color-on-accent: #08090C;
+
+    --color-blob-1: #0E1626;
+    --color-blob-2: #0E1B19;
+    --color-blob-3: #12172A;
+  }
 }
 
 * {
@@ -41,8 +133,9 @@ body::before {
   inset: -20% -20% auto -20%;
   height: 60vh;
   background: linear-gradient(120deg,
-      rgba(198, 75, 43, 0.08),
-      rgba(29, 124, 77, 0.08));
+      var(--color-blob-1),
+      var(--color-blob-2));
+  opacity: 0.5;
   z-index: -1;
 }
 

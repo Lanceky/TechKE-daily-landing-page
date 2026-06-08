@@ -336,9 +336,7 @@ function App() {
                     <a href={privacyPolicyUrl} target="_blank" rel="noreferrer">
                         Privacy
                     </a>
-                    <a href={privacyPolicyUrl} target="_blank" rel="noreferrer">
-                        Terms
-                    </a>
+                    <a href="/terms">Terms</a>
                     <a href={`mailto:${contactEmail}`}>Support</a>
                 </div>
             </footer>

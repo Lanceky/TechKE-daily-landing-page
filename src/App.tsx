@@ -2,8 +2,6 @@ import './App.css'
 
 const playStoreUrl =
     'https://play.google.com/store/apps/details?id=com.techke.app'
-const privacyPolicyUrl =
-    'https://lanceky.github.io/techke-privacy-policy/'
 const contactEmail = 'qlanlabs@gmail.com'
 
 const spotlightArticles = [
@@ -333,9 +331,7 @@ function App() {
                 <div className="footer-links">
                     <a href="#contact">Contact</a>
                     <a href="#editorial-guidelines">Editorial Guidelines</a>
-                    <a href={privacyPolicyUrl} target="_blank" rel="noreferrer">
-                        Privacy
-                    </a>
+                    <a href="/privacy">Privacy</a>
                     <a href="/terms">Terms</a>
                     <a href={`mailto:${contactEmail}`}>Support</a>
                 </div>

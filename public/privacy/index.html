@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') {
+                    document.documentElement.setAttribute('data-theme', t);
+                }
+            } catch (e) { }
+        })();
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,6 +132,36 @@
             text-decoration: underline;
         }
 
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .theme-toggle {
+            display: inline-grid;
+            place-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:focus-visible {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .theme-toggle svg {
+            display: block;
+        }
+
         main {
             max-width: 880px;
             margin: 0 auto 80px;
@@ -216,7 +256,11 @@
 <body>
     <header class="topbar">
         <a class="brand" href="/">TechKE<span>.</span>Daily</a>
-        <a class="back-link" href="/">&larr; Back to home</a>
+        <div class="topbar-right">
+            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"
+                title="Toggle dark mode"></button>
+            <a class="back-link" href="/">&larr; Back to home</a>
+        </div>
     </header>
 
     <main>
@@ -451,6 +495,29 @@
     <footer>
         &copy; 2026 TechKE Daily. All rights reserved.
     </footer>
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var btn = document.getElementById('themeToggle');
+            var sun = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+            var moon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+            function isDark() { return root.getAttribute('data-theme') === 'dark'; }
+            function render() { if (btn) btn.innerHTML = isDark() ? sun : moon; }
+            if (!root.getAttribute('data-theme')) {
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+            }
+            render();
+            if (btn) {
+                btn.addEventListener('click', function () {
+                    var next = isDark() ? 'light' : 'dark';
+                    root.setAttribute('data-theme', next);
+                    try { localStorage.setItem('theme', next); } catch (e) { }
+                    render();
+                });
+            }
+        })();
+    </script>
 </body>
 
 </html>
